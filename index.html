@@ -48,26 +48,44 @@
 <body>
 
 
-    <header>
+<header>
     <h1>Laankmatter 🚀</h1>
     <p>Trading | Educación Financiera | Mentalidad</p>
 
-    <!-- Aquí pegamos el contador -->
-    <div style="font-size: 30px; margin-top: 20px;" id="contador">
-    Ganancias: $0.00
-</div>
+    <!-- Aquí pegamos el contador con botón -->
+    <div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin-top: 20px;">
+        <div id="contador" style="font-size: 30px;">
+            Ganancias: $0.00
+        </div>
 
-<script>
-let ganancias = 0;
+        <!-- Botón interactivo -->
+        <button id="boostBtn" style="padding: 10px 20px; font-size: 18px; cursor: pointer; background: #00ff99; border: none; border-radius: 8px;">
+            ¡Boost!
+        </button>
+    </div>
 
-// Cada 50ms actualizamos el contador
-setInterval(() => {
-    // Suma un número aleatorio entre 1 y 5
-    let incremento = Math.random() * 4 + 1; 
-    ganancias += incremento;
+    <!-- Script del contador y botón -->
+    <script>
+    let ganancias = 0;
 
-    // Mostramos con 2 decimales
-    document.getElementById("contador").innerText = "Ganancias: $" + ganancias.toFixed(2);
+    // Contador automático
+    setInterval(() => {
+        let incremento = Math.random() * 4 + 1;
+        ganancias += incremento;
+        document.getElementById("contador").innerText = "Ganancias: $" + ganancias.toFixed(2);
+    }, 50);
+
+    // Evento del botón para aumentar ganancias
+    document.getElementById("boostBtn").addEventListener("click", () => {
+        let boost = Math.random() * 50 + 50; // aumenta entre 50 y 100
+        ganancias += boost;
+        document.getElementById("contador").innerText = "Ganancias: $" + ganancias.toFixed(2);
+    });
+    </script>
+
+    <a href="#" class="btn">Únete Ahora</a>
+</header>
+
 </script>
 
 <footer>
