@@ -47,11 +47,28 @@
 </head>
 <body>
 
-<header>
+
+    <header>
     <h1>Laankmatter 🚀</h1>
     <p>Trading | Educación Financiera | Mentalidad</p>
-    <a href="#" class="btn">Únete Ahora</a>
-</header>
+
+    <!-- Aquí pegamos el contador -->
+    <div style="font-size: 30px; margin-top: 20px;" id="contador">
+    Ganancias: $0.00
+</div>
+
+<script>
+let ganancias = 0;
+
+// Cada 50ms actualizamos el contador
+setInterval(() => {
+    // Suma un número aleatorio entre 1 y 5
+    let incremento = Math.random() * 4 + 1; 
+    ganancias += incremento;
+
+    // Mostramos con 2 decimales
+    document.getElementById("contador").innerText = "Ganancias: $" + ganancias.toFixed(2);
+</script>
 
 <footer>
     © 2026 Laankmatter - Todos los derechos reservados
